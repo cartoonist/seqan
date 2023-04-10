@@ -152,7 +152,7 @@ StellarMatch<TSequence, TId>::INVALID_ID = "###########";
 ///////////////////////////////////////////////////////////////////////////////
 // to sort matches by position and remove overlapping matches
 template <typename TMatch>
-struct LessPos : public ::std::binary_function <TMatch, TMatch, bool> {		
+struct LessPos {
 	LessPos() {}
 	
 	inline int compare(TMatch const & a, TMatch const & b) const {
@@ -204,7 +204,7 @@ struct LessPos : public ::std::binary_function <TMatch, TMatch, bool> {
 ///////////////////////////////////////////////////////////////////////////////
 // to sort matches by length
 template <typename TMatch>
-struct LessLength : public ::std::binary_function <TMatch, TMatch, bool> {		
+struct LessLength {
 	LessLength() {}
 
 	inline int compare(TMatch const & a, TMatch const & b) const {

@@ -61,8 +61,7 @@ namespace seqan
     // *** COMPARATORS & MAPS ***
 
     template <typename TValue, typename TResult = int>
-    struct _skew3NComp :
-        public std::binary_function<TValue, TValue, TResult>
+    struct _skew3NComp
     {
         inline TResult operator() (const TValue &a, const TValue &b) const
         {
@@ -94,8 +93,7 @@ namespace seqan
     };
 
     template <typename TValue, typename TResult = typename Value<TValue, 1>::Type>
-    struct _skew3NMapLinear :
-        public std::unary_function<TValue, TResult>
+    struct _skew3NMapLinear
     {
         TResult BN;
 
@@ -108,8 +106,7 @@ namespace seqan
     };
 
     template <typename TValue, typename TResult = typename Value<TValue, 1>::Type>
-    struct _skew3NMapSliced :
-        public std::unary_function<TValue, TResult>
+    struct _skew3NMapSliced
     {
         TResult BN, BN2;
 
@@ -123,8 +120,7 @@ namespace seqan
 
 
     template <typename TValue, typename TResult = TValue>
-    struct _skew3UnslicerFunc :
-        public std::unary_function<TValue, TResult>
+    struct _skew3UnslicerFunc
     {
         TResult o1, o2, n2;
 
@@ -140,8 +136,7 @@ namespace seqan
     };
 
     template <typename TValue, typename TResult = typename Value<typename Value<TValue, 2>::Type>::Type>
-    struct _skew3NMapExtended :
-        public std::unary_function<TValue, TResult>
+    struct _skew3NMapExtended
     {
         inline TResult operator() (const TValue & x) const
         {
@@ -150,8 +145,7 @@ namespace seqan
     };
 
     template <typename TValue, typename TResult = int>
-    struct _skew3ExtendComp :
-        public std::binary_function<TValue, TValue, TResult>
+    struct _skew3ExtendComp
     {
         inline TResult operator() (const TValue &a, const TValue &b) const
         {

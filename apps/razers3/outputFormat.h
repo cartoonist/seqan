@@ -123,8 +123,7 @@ score(Score<TValue, Quality<TQualityString> > const & me,
 
 // ... to sort matches and remove duplicates with equal beginPos
 template <typename TAlignedReadStore, typename TLessScore>
-struct LessGPosRNo :
-    public std::binary_function<typename Value<TAlignedReadStore>::Type, typename Value<TAlignedReadStore>::Type, bool>
+struct LessGPosRNo
 {
     typedef typename Value<TAlignedReadStore>::Type TAlignedRead;
     TLessScore lessScore;

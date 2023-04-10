@@ -218,7 +218,7 @@ struct SequenceOutputOptions
 // ----------------------------------------------------------------------------
 
 template <typename TValue>
-struct QualityExtractor : public std::unary_function<TValue, char>
+struct QualityExtractor
 {
     inline char operator()(TValue const & x) const
     {

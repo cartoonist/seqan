@@ -84,8 +84,7 @@ _getAlignmentStatistics(Graph<Undirected<TCargo, TSpec> >& dist,
 //////////////////////////////////////////////////////////////////////////////
 
 template<typename TSize>
-struct LessPair_ :
-    public std::unary_function<Pair<TSize, TSize>, bool>
+struct LessPair_
 {
     inline bool
     operator() (Pair<TSize, TSize> const& a1, Pair<TSize, TSize> const& a2) const {
@@ -95,8 +94,7 @@ struct LessPair_ :
 };
 
 template<typename TSize>
-struct _LessTripel :
-    public std::unary_function<Pair<TSize, Triple<TSize, TSize, TSize> >, bool>
+struct _LessTripel
 {
     inline bool
     operator() (Pair<TSize, Triple<TSize, TSize, TSize> > const& a1, Pair<TSize, Triple<TSize, TSize, TSize> > const& a2) {

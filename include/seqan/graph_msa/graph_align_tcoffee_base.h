@@ -300,8 +300,7 @@ struct MsaEdgeCargo_ {
 //////////////////////////////////////////////////////////////////////////////
 
 template<typename TVertexDescriptor, typename TCargo>
-struct LessMsaEdgeCargo_ :
-    public std::binary_function<TVertexDescriptor, TCargo, bool>
+struct LessMsaEdgeCargo_
 {
     inline bool
     operator() (MsaEdgeCargo_<TVertexDescriptor, TCargo> const& a1,

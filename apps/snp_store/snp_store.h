@@ -352,8 +352,7 @@ struct FragmentStoreConfig<SnpStoreGroupSpec_> :
 
 // sort operators
     template <typename TMatches, typename TMatchQualities>
-    struct LessGStackMQ :
-        public ::std::binary_function < typename Value<TMatches>::Type, typename Value<TMatchQualities>::Type, bool >
+    struct LessGStackMQ
     {
         TMatchQualities &qualStore;
 
@@ -402,7 +401,7 @@ struct FragmentStoreConfig<SnpStoreGroupSpec_> :
 
 
     template <typename TPosLen>
-    struct LessPosLen : public ::std::binary_function < TPosLen, TPosLen, bool >
+    struct LessPosLen
     {
         inline bool operator() (TPosLen const &a, TPosLen const &b) const
         {
@@ -416,8 +415,7 @@ struct FragmentStoreConfig<SnpStoreGroupSpec_> :
     };
 
     template <typename TMatches, typename TMatchQualities>
-    struct LessGStackOaMQ :
-        public ::std::binary_function < typename Value<TMatches>::Type, typename Value<TMatchQualities>::Type, bool >
+    struct LessGStackOaMQ
     {
         TMatchQualities &qualStore;
 
@@ -465,7 +463,7 @@ struct FragmentStoreConfig<SnpStoreGroupSpec_> :
 
 
     template <typename TReadMatch>
-    struct LessId : public ::std::binary_function < TReadMatch, TReadMatch, bool >
+    struct LessId
     {
         inline bool operator() (TReadMatch const &a, TReadMatch const &b) const
         {
@@ -478,7 +476,7 @@ struct FragmentStoreConfig<SnpStoreGroupSpec_> :
 
     // ... to sort matches according to gBegin
     template <typename TReadMatch>
-    struct LessGPos : public ::std::binary_function < TReadMatch, TReadMatch, bool >
+    struct LessGPos
     {
         inline bool operator() (TReadMatch const &a, TReadMatch const &b) const
         {
@@ -501,7 +499,7 @@ struct FragmentStoreConfig<SnpStoreGroupSpec_> :
 
     // ... to sort matches according to gEnd
     template <typename TReadMatch>
-    struct LessGPosEnd : public ::std::binary_function < TReadMatch, TReadMatch, bool >
+    struct LessGPosEnd
     {
         inline bool operator() (TReadMatch const &a, TReadMatch const &b) const
         {
@@ -520,7 +518,7 @@ struct FragmentStoreConfig<SnpStoreGroupSpec_> :
 
 
     template <typename TReadMatch>
-    struct LessGPosEndOa : public ::std::binary_function < TReadMatch, TReadMatch, bool >
+    struct LessGPosEndOa
     {
         inline bool operator() (TReadMatch const &a, TReadMatch const &b) const
         {
@@ -542,7 +540,7 @@ struct FragmentStoreConfig<SnpStoreGroupSpec_> :
 
         // ... to sort quality values //
     template <typename TQual>
-    struct HigherQ : public ::std::binary_function < TQual, TQual, bool >
+    struct HigherQ
     {
         inline bool operator() (TQual const &a, TQual const &b) const
         {

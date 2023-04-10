@@ -220,8 +220,7 @@ template <typename TGapAnchor, typename TTag>
 struct _LessGapAnchor;
 
 template <typename TGapAnchor>
-struct _LessGapAnchor<TGapAnchor, SortSeqPos> :
-    public std::binary_function<TGapAnchor, TGapAnchor, bool>
+struct _LessGapAnchor<TGapAnchor, SortSeqPos>
 {
     inline bool
     operator() (TGapAnchor const& a1, TGapAnchor const& a2) const {
@@ -230,8 +229,7 @@ struct _LessGapAnchor<TGapAnchor, SortSeqPos> :
 };
 
 template <typename TGapAnchor>
-struct _LessGapAnchor<TGapAnchor, SortGapPos> :
-    public std::binary_function<TGapAnchor, TGapAnchor, bool>
+struct _LessGapAnchor<TGapAnchor, SortGapPos>
 {
     inline bool
     operator() (TGapAnchor const& a1, TGapAnchor const& a2) const {

@@ -71,8 +71,7 @@ struct BamScannerCacheSearchKey_
     TFlag flagsMask;
 };
 
-struct BamScannerCacheHash_ :
-    std::unary_function<BamScannerCacheKey_, size_t>
+struct BamScannerCacheHash_
 {
     size_t operator()(BamScannerCacheKey_ const &v) const
     {

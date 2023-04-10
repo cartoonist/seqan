@@ -106,10 +106,7 @@ namespace seqan
 
     // greater-operator for two SkewDCStreams
     template <typename TValue>
-    struct CompareSkewDCStream :
-        public std::binary_function < SkewDCStream<TValue>,
-                                        SkewDCStream<TValue>,
-                                        bool >
+    struct CompareSkewDCStream
     {
         inline bool operator()(const SkewDCStream<TValue> &a,
                                const SkewDCStream<TValue> &b) const
@@ -139,10 +136,7 @@ namespace seqan
 
     // greater-operator for two SkewDCStreams (optimized for bit-packed character tuples)
     template <typename T1, typename T2, typename T, unsigned SIZE>
-    struct CompareSkewDCStream< Triple<T1, T2, Tuple<T, SIZE, BitPacked<> >, Pack> > :
-        public std::binary_function < SkewDCStream<Triple<T1, T2, Tuple<T, SIZE, BitPacked<> >, Pack> >,
-                                        SkewDCStream<Triple<T1, T2, Tuple<T, SIZE, BitPacked<> >, Pack> >,
-                                        bool >
+    struct CompareSkewDCStream< Triple<T1, T2, Tuple<T, SIZE, BitPacked<> >, Pack> >
     {
         typedef Tuple<T,SIZE, BitPacked<> > T3;
         inline bool operator()(const SkewDCStream<Triple<T1, T2, T3, Pack> > &a,

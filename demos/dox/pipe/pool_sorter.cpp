@@ -9,8 +9,7 @@ using namespace seqan;
 
 // Custom 3-way comparator functor.  Return a value </==/> 0 (less than, equal
 // to, greater than).
-struct MyIntLessCmp :
-    std::binary_function<int, int, int>
+struct MyIntLessCmp
 {
     int operator()(int const & lhs, int const & rhs) const
     {

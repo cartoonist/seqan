@@ -552,8 +552,7 @@ namespace seqan
         public std::less<TOccValue> {};
 
     template <typename T1, typename T2, typename TPack>
-    struct SAValueLess_< Pair<T1,T2,TPack> >:
-        public std::binary_function< Pair<T1,T2,TPack>, Pair<T1,T2,TPack>, bool>
+    struct SAValueLess_< Pair<T1,T2,TPack> >
     {
         inline bool operator()(Pair<T1,T2,TPack> const &a, Pair<T1,T2,TPack> const &b) const {
             return    (getValueI1(a) < getValueI1(b)) ||

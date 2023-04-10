@@ -61,8 +61,7 @@ namespace seqan
     // *** COMPARATORS & MAPS ***
 
     template <typename TValue, typename TResult = int>
-    struct _skew7NComp :
-        public std::binary_function<TValue, TValue, TResult>
+    struct _skew7NComp
     {
         inline TResult operator() (const TValue &a, const TValue &b) const
         {
@@ -95,11 +94,7 @@ namespace seqan
 
     // optimized for bitvectors
     template <typename T1, typename TValue, typename TResult>
-    struct _skew7NComp< Pair<T1, Tuple<TValue, 7, BitPacked<> >, Pack >, TResult > :
-        public std::binary_function<
-            Pair<T1, Tuple<TValue, 7, BitPacked<> >, Pack >,
-            Pair<T1, Tuple<TValue, 7, BitPacked<> >, Pack >,
-            TResult>
+    struct _skew7NComp< Pair<T1, Tuple<TValue, 7, BitPacked<> >, Pack >, TResult >
     {
         inline TResult operator() (
             const Pair<T1, Tuple<TValue, 7, BitPacked<> >, Pack > &a,
@@ -114,8 +109,7 @@ namespace seqan
     };
 
     template <typename TValue, typename TResult = typename Value<TValue, 1>::Type>
-    struct _skew7NMapLinear :
-        public std::unary_function<TValue, TResult>
+    struct _skew7NMapLinear
     {
         TResult BN4, BN;
 
@@ -128,8 +122,7 @@ namespace seqan
     };
 
     template <typename TValue, typename TResult = typename Value<TValue, 1>::Type>
-    struct _skew7NMapSliced :
-        public std::unary_function<TValue, TResult>
+    struct _skew7NMapSliced
     {
         TResult off[5];
 
@@ -150,8 +143,7 @@ namespace seqan
 
 
     template <typename TValue, typename TResult = TValue>
-    struct _skew7UnslicerFunc :
-        public std::unary_function<TValue, TResult>
+    struct _skew7UnslicerFunc
     {
         TResult o1, o2, o4, n4, n24;
 
@@ -171,8 +163,7 @@ namespace seqan
     };
 
     template <typename TValue, typename TResult = typename Value<typename Value<TValue, 2>::Type>::Type>
-    struct _skew7NMapExtended :
-        public std::unary_function<TValue, TResult>
+    struct _skew7NMapExtended
     {
         inline TResult operator() (const TValue& x) const
         {
@@ -181,8 +172,7 @@ namespace seqan
     };
 
     template <typename TValue, unsigned EXT_LENGTH, typename TResult = int>
-    struct _skew7ExtendComp :
-        public std::binary_function<TValue, TValue, TResult>
+    struct _skew7ExtendComp
     {
         inline TResult operator() (const TValue &a, const TValue &b) const
         {

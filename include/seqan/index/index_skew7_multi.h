@@ -54,7 +54,7 @@ namespace seqan
     // *** COMPARATORS & MAPS ***
 
     template <typename TValue, typename TResult = int>
-    struct _skew7NCompMulti : public std::binary_function<TValue, TValue, TResult> {
+    struct _skew7NCompMulti {
         inline TResult operator() (const TValue &a, const TValue &b) const
         {
             typedef typename Value<TValue, 1>::Type                 TPos;
@@ -93,11 +93,8 @@ namespace seqan
 
     // optimized for bitvectors
     template <typename T1, typename TValue, typename TResult>
-    struct _skew7NCompMulti< Pair<T1, Tuple<TValue, 7, BitPacked<> >, Pack >, TResult > :
-        public std::binary_function<
-            Pair<T1, Tuple<TValue, 7, BitPacked<> >, Pack >,
-            Pair<T1, Tuple<TValue, 7, BitPacked<> >, Pack >,
-            TResult> {
+    struct _skew7NCompMulti< Pair<T1, Tuple<TValue, 7, BitPacked<> >, Pack >, TResult >
+    {
         inline TResult operator() (
             const Pair<T1, Tuple<TValue, 7, BitPacked<> >, Pack > &a,
             const Pair<T1, Tuple<TValue, 7, BitPacked<> >, Pack > &b) const
@@ -137,8 +134,7 @@ namespace seqan
         typename TResultSize = typename Value<TLimitsString>::Type,
         typename TResult = Pair<TResultSize, typename Value<TValue,2>::Type, typename Spec<TValue>::Type>
     >
-    struct _skew7GlobalSlicedMulti :
-        public std::unary_function<TValue, TResult>
+    struct _skew7GlobalSlicedMulti
     {
 
         typedef TResultSize TSize;
